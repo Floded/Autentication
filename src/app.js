@@ -1,3 +1,6 @@
+import productRouter from "./routes/products";
+import userRouter from "./routes/user";
+
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
@@ -11,12 +14,11 @@ const app = express();
 
 app.use(cors({ origin: true }));
 app.use(bodyparser.json());
-app.use(morgan("dev"));
+app.use(morgan("combined"));
 
 //========== Rutas ==========
 
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "Hola probando server con morgan" });
-});
+app.get("/user", userRouter);
+app.get("/products", productRouter);
 
 export { app };
