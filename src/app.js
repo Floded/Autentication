@@ -1,4 +1,6 @@
 import productRouter from "./auth/routes/products";
+import compareRouter from "./auth/routes/testCompare";
+import testRouter from "./auth/routes/testHash";
 import userRouter from "./auth/routes/user";
 
 const express = require("express");
@@ -20,5 +22,7 @@ app.use(morgan("combined"));
 
 app.get("/user", userRouter);
 app.get("/products", productRouter);
+app.get("/test", testRouter);
+app.get("/compare", compareRouter);
 
 export { app };
