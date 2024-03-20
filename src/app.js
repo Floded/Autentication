@@ -1,5 +1,5 @@
-import productRouter from "./routes/products";
-import userRouter from "./routes/user";
+import productRouter from "./auth/routes/products";
+import userRouter from "./auth/routes/user";
 
 const express = require("express");
 const cors = require("cors");
